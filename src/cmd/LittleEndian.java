@@ -7,6 +7,7 @@ public class LittleEndian
 {
 	public static float getFloat(float data)
 	{
+		if (MainApp.isForWii) return data;
 		ByteBuffer bb = ByteBuffer.allocate(4);
 		bb.asFloatBuffer().put(data);
 		bb.order(ByteOrder.LITTLE_ENDIAN);
@@ -14,6 +15,7 @@ public class LittleEndian
 	}
 	public static int getInt(int data)
 	{
+		if (MainApp.isForWii) return data;
 		ByteBuffer bb = ByteBuffer.allocate(4);
 		bb.asIntBuffer().put(data);
 		bb.order(ByteOrder.LITTLE_ENDIAN);
@@ -21,6 +23,7 @@ public class LittleEndian
 	}
 	public static short getShort(short data)
 	{
+		if (MainApp.isForWii) return data;
 		ByteBuffer bb = ByteBuffer.allocate(2);
 		bb.asShortBuffer().put(data);
 		bb.order(ByteOrder.LITTLE_ENDIAN);
